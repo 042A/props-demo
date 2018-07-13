@@ -1,0 +1,49 @@
+
+Your salesreps
+<h2>CreateNewSeller</h2>
+
+
+<input  type="text" #newName placeholder="Name" />
+
+<input  type="text" #newPhone placeholder="Phone" />
+
+<input  type="text" #newMail placeholder="Mail" />
+
+<imageupload></imageupload>
+
+
+<button  (click)="addItem(newName.value , newPhone.value, newMail.value )">Add</button>
+<button  (click)="deleteEverything()">Delete All</button>
+
+
+
+<ul style="list-style-type: none;    padding: 0;
+">
+    <li *ngFor="let item of items | async">
+  
+
+
+   <h3>{{item.name}}</h3>  
+  
+
+
+    <input  type="text" #updatetext1 [value]="item.name" placeholder="Name" />
+   
+      <input  type="text" #updatetext2 [value]="item.phone" placeholder="Phone"/>
+       
+      <input  type="text" #updatetext3 [value]="item.mail" placeholder="Email"/>
+       
+
+
+      <button (click)="updateItem(item.$key, updatetext1.value, updatetext2.value, updatetext3.value)">Update</button>
+      <button (click)="deleteItem(item.$key)">Delete</button>
+   
+
+    </li>
+
+
+  </ul>
+
+
+
+

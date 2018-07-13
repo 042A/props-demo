@@ -1,0 +1,82 @@
+<md-sidenav-container class="example-container">
+  <md-sidenav #sidenav class="example-sidenav">
+    Jolly good! erererer
+  </md-sidenav>
+
+  
+
+
+<md-toolbar color="primary">
+
+  <div class="example-sidenav-content">
+    <button md-button (click)="sidenav.open()">
+      Meny
+    </button>
+  </div>
+
+
+<span class="example-spacer"></span>
+    <md-icon class="example-icon">favorite</md-icon>
+    <md-icon class="example-icon">delete</md-icon>
+
+    
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+  <md-icon>more_vert</md-icon>
+</button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item>
+    <md-icon>dialpad</md-icon>
+    <span>Redial</span>
+  </button>
+  <button md-menu-item disabled>
+    <md-icon>voicemail</md-icon>
+    <span>Check voicemail</span>
+  </button>
+  <button md-menu-item>
+    <md-icon>notifications_off</md-icon>
+    <span>Disable alerts</span>
+  </button>
+</md-menu>
+
+</md-toolbar>
+
+<md-card class="example-card">
+  <md-card-header>
+  
+    <md-card-title>AF Post</md-card-title>
+  
+  </md-card-header>
+  <md-card-content>
+    <h1>{{ item | async | json }}</h1>
+  <input type="text" #newname placeholder="Name" />
+  <input type="text" #newsize placeholder="Size" />
+  <br />
+  <button (click)="save(newname.value)">Set Name</button>
+  <button (click)="update(newsize.value)">Update Size</button>
+  <button (click)="delete()">Delete</button>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+
+<md-card class="example-card">
+  <md-card-header>
+  
+    <md-card-title>AF Post</md-card-title>
+  
+  </md-card-header>
+  <md-card-content>
+<api1>API1</api1>
+</md-card-content>
+</md-card>
+
+
+<api2>API2</api2>
+
+<api3>API2</api3>
+
+<api4>API2</api4>
+
+</md-sidenav-container>

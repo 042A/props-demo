@@ -1,0 +1,358 @@
+
+
+<div  class="ui main container ">
+
+<div class="ui five tablet stackable small steps">
+
+  <div class="step">
+    <i class="plane icon"></i>
+    <div class="content">
+      <div class="title">Kontakt och tid</div>
+      <div class="description">Kontaktinformation och offertens tidsperiod.</div>
+    </div>
+  </div>
+
+    <div class="step">
+    <i class="plane icon"></i>
+    <div class="content">
+      <div class="title">Produktval</div>
+      <div class="description">Plocka ihop din offert med förvalda produkter.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <i class="dollar icon"></i>
+    <div class="content">
+      <div class="title">Övrig information</div>
+      <div class="description">Säljpitch, kostnadskalkyl & villkor.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <i class="info circle icon"></i>
+    <div class="content">
+      <div class="title">Granska</div>
+      <div class="description">Granska och inställningar.</div>
+    </div>
+  </div>
+
+   <div class="active step">
+    <i class="info circle icon"></i>
+    <div class="content">
+      <div class="title">Ladda ner/Skicka</div>
+      <div class="description">Exportera till PDF eller skicka direkt.</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="ui grid">
+  <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Front page
+</h4>
+
+<section id="banner">
+      <div class="inner">
+      <h4>Din offert</h4>
+          <h1>Anton Karl22sson</h1>
+
+          <ul class="actions">
+              <li><a href="#one" class="button alt scrolly big">Tjabba</a></li>
+          </ul>
+      </div>
+</section>
+
+
+<section class="extrapadd">
+    <div id="info">
+    <div class="ui three column grid">
+      <div class="column">
+            <p class="bordertext tq-orange">Kontakt</p>
+            <ul style="list-style: none; padding-left: 0px;">
+            <li><strong>Företag</strong></li>
+            <li>Fodersidan</li>
+            <li>Glasbruksgatan</li>
+            <li>0728-2398 923 93</li>
+            <li>-</li>
+
+            <li><strong>Vår kontaktperson:</strong></li>
+            <li>Anders</li>
+            <li>03-32-3-32</li>
+            <li>042@gmail.com</li>
+            </ul>
+            </div>
+             <div class="column">
+             <p class="bordertext  tq-orange">Mottagare</p>
+            <ul style="list-style: none;">
+              <li><strong>Företag</strong></li>
+            <li>Fodersidan</li>
+            <li>Glasbruksgatan</li>
+            <li>0728-2398 923 93</li>
+            <li>-</li>
+            <li><strong>Er kontaktperson:</strong></li>
+            <li>Anders</li>
+            <li>03-32-3-32</li>
+            <li>042@gmail.com</li>
+            </ul>
+</div>
+
+                  <div class="column">
+
+            <p class="bordertext  tq-orange">Datum</p>
+            <ul style="list-style: none;">
+            <li><strong>Utfärdat:</strong></li>
+            <li>31.02.2017</li>
+             <li><strong>Giltigt till:</strong></li>
+            <li>31.02.2018</li>
+            </ul>
+</div>
+
+        </div>
+    </div>
+</section >
+    </div>
+
+  </div>
+
+   <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Sales pitch
+</h4>
+
+<div class="putmehere" [dragula]='"first-bag"'>
+   <article id="one" class="post style1">
+
+                <div class="image123">
+                    <img src="/assets/images/pic14.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="inner">
+                        <header>
+                            <h2><a href="generic.html">Välkommen på en lite roligare resa!</a></h2>
+                            <p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+                        </header>
+                        <p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+
+                    </div>
+
+                </div>
+            </article>
+</div>
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Products of interest
+</h4>
+
+<div class="ui cards" [dragula]='"first-bag"'>
+
+  <div *ngFor="let product of products | async" class="card ui fluid">
+    <div class="content">
+      <img class="right floated mini ui image" src="{{product.image}}">
+      <div class="header">
+        {{product.name}}
+      </div>
+      <div class="meta">
+        {{product.brand}}
+      </div>
+      <div class="description">
+        Elliot requested permission to view your contact details
+      </div>
+    </div>
+
+  </div>
+        </div>
+
+    </div>
+  </div>
+
+
+
+    <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+    <h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+Costs
+</h4>
+
+ <p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+
+<table class="ui celled table">
+  <thead>
+    <tr><th>Artikel</th>
+    <th>á pris</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>
+       Article 1
+      </td>
+      <td>299:-</td>
+
+    </tr>
+    <tr>
+      <td>Your price</td>
+      <td><div class="ui ribbon red label">Erbjudande kampanj</div>Cell</td>
+
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+
+    </tr>
+  </tbody>
+
+</table>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Conditions
+</h4>
+   <!-- One -->  <article id="one" class="post style1">
+
+                <div class="image123">
+                    <img src="/assets/images/pic14.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="inner">
+                        <header>
+                            <h2><a href="generic.html">Välkommen på en lite roligare resa!</a></h2>
+                            <p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+                        </header>
+                        <p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+
+                    </div>
+
+                </div>
+            </article>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Last page (contact)
+</h4>
+
+
+
+<section id="banner">
+      <div class="inner">
+      <h4>Din offert</h4>
+          <h1>Anton Karl22sson</h1>
+
+          <ul class="actions">
+              <li><a href="#one" class="button alt scrolly big">Tjabba</a></li>
+          </ul>
+      </div>
+</section>
+
+
+<section class="extrapadd">
+    <div id="info">
+    <div class="ui three column grid">
+      <div class="column">
+            <p class="bordertext tq-orange">Kontakt</p>
+            <ul style="list-style: none; padding-left: 0px;">
+            <li><strong>Företag</strong></li>
+            <li>Fodersidan</li>
+            <li>Glasbruksgatan</li>
+            <li>0728-2398 923 93</li>
+            <li>-</li>
+
+            <li><strong>Vår kontaktperson:</strong></li>
+            <li>Anders</li>
+            <li>03-32-3-32</li>
+            <li>042@gmail.com</li>
+            </ul>
+            </div>
+             <div class="column">
+             <p class="bordertext  tq-orange">Mottagare</p>
+            <ul style="list-style: none;">
+              <li><strong>Företag</strong></li>
+            <li>Fodersidan</li>
+            <li>Glasbruksgatan</li>
+            <li>0728-2398 923 93</li>
+            <li>-</li>
+            <li><strong>Er kontaktperson:</strong></li>
+            <li>Anders</li>
+            <li>03-32-3-32</li>
+            <li>042@gmail.com</li>
+            </ul>
+</div>
+
+                  <div class="column">
+
+            <p class="bordertext  tq-orange">Datum</p>
+            <ul style="list-style: none;">
+            <li><strong>Utfärdat:</strong></li>
+            <li>31.02.2017</li>
+             <li><strong>Giltigt till:</strong></li>
+            <li>31.02.2018</li>
+            </ul>
+</div>
+
+        </div>
+    </div>
+</section >
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="four wide column">
+      <img>
+    </div>
+    <div class="twelve wide column">
+    </div>
+  </div>
+
+</div></div>
+
+<div class="ui  bottom  fluid three item menu " style="height: 200px;">
+
+
+</div>

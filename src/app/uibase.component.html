@@ -1,0 +1,271 @@
+
+
+<div class="ui four column doubling stackable grid container">
+  <div class="column">
+    <p>asdasd</p>
+    <p></p>
+  </div>
+  <div class="column">
+    <p>asdasd</p>
+    <p></p>
+  </div>
+  <div class="column">
+    <p>asdasd</p>
+    <p></p>
+  </div>
+  <div class="column">
+    <p></p>
+  </div>
+</div>
+
+<div class="ui raised padded text container segment">
+  <h2 class="ui header">Dogs Roles with Humans</h2>
+  <p>    Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.
+</p>
+  <p></p>
+</div>
+
+<div class="ui vertical menu">
+  <div class="item">
+    <div class="header">Products</div>
+    <div class="menu">
+      <a class="item">Enterprise</a>
+      <a class="item active">Consumer</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">CMS Solutions</div>
+    <div class="menu">
+      <a class="item">Rails</a>
+      <a class="item">Python</a>
+      <a class="item">PHP</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">Hosting</div>
+    <div class="menu">
+      <a class="item">Shared</a>
+      <a class="item">Dedicated</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">Support</div>
+    <div class="menu">
+      <a class="item">E-mail Support</a>
+      <a class="item">FAQs</a>
+    </div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="eight wide column"></div>
+  <div class="eight wide column"></div>
+  <div class="ten wide column"></div>
+  <div class="six wide column"></div>
+  <div class="four wide column"></div>
+  <div class="twelve wide column"></div>
+  <div class="two wide column"></div>
+  <div class="fourteen wide column"></div>
+  <div class="sixteen wide column"></div>
+</div>
+
+<sm-dimmer #dimmer>
+    <div class="center">
+        <h2 class="ui inverted icon header">
+            <i class="mail icon"></i>
+            Dimmer Message
+            <div class="sub header">Dimmer sub-header</div>
+        </h2>
+    </div>
+</sm-dimmer>
+<sm-button (click)="dimmer.show({opacity: 1, transition: 'slide up'})" class="white">Page dimmer</sm-button>
+
+
+
+
+
+<sm-progress class="primary" [progress]="percent"></sm-progress>
+
+
+<button class="ui button green" (click)="myPopup.show($event, {position: 'right center'})">Click me</button>
+
+<sm-popup #myPopup>
+    <sm-card class="card">
+      card när avsinstallat material md
+        <sm-button class="bottom attached fluid primary" (click)="myPopup.hide()" icon="close">Close popup</sm-button>
+    </sm-card>
+</sm-popup>
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Description
+</h4>
+<p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>
+<h4 class="ui horizontal divider header">
+  <i class="bar chart icon"></i>
+  Specifications
+</h4>
+<table class="ui definition table">
+  <tbody>
+    <tr>
+      <td class="two wide column">Size</td>
+      <td>1" x 2"</td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td>6 ounces</td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td>Yellowish</td>
+    </tr>
+    <tr>
+      <td>Odor</td>
+      <td>Not Much Usually</td>
+    </tr>
+  </tbody>
+</table>
+<sm-search placeholder="Search..." (onSearch)="elementIcon.innerText = $event" [icon]="true" 
+></sm-search>
+  	<sm-button class="positive" (click)="invertedSidebar.show({transition: 'overlay'})">Lunch left sidebar</sm-button>
+
+    
+    <button class="ui button green" (click)="myModal.show()">Click me</button>
+    <sm-modal title="Hello from Modal" class="basic" #myModal>
+        <modal-content>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </modal-content>
+    </sm-modal>
+
+    <button class="ui button primary" (click)="myModalNormal.show({inverted: true})">Click me</button>
+<sm-modal title="Hello from Modal" class="" icon="home" #myModalNormal>
+    <modal-content>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </modal-content>
+    <modal-actions>
+        <div class="ui buttons">
+            <div class="ui button primary" (click)="myModalNormal.hide()">Close modal</div>
+        </div>
+    </modal-actions>
+</sm-modal>
+
+    <button class="ui button teal" (click)="myModalBluring.show({blurring: true})">Click me</button>
+    <sm-modal #myModalBluring title="Hello from Modal" class="fluid">
+        <modal-content>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </modal-content>
+    </sm-modal>
+    
+  
+
+<sm-dropdown title="Cities" class="pointing floating labeled icon button">
+    <sm-item>Hej</sm-item>
+      <sm-item>Haj</sm-item>
+        <sm-item>Hoj</sm-item>
+</sm-dropdown>
+
+ <sm-segment class="raised">
+    Hello
+ </sm-segment>
+
+<sm-button class="positive" (click)="clickMe($event)" icon="thumbs up">Click Me</sm-button>
+
+ <sm-button class="positive" (click)="clickMe($event)" icon="thumbs up">Click Me</sm-button>
+        <h3>{{isClicked}}</h3>
+
+        <sm-button class="basic" icon="">Basic</sm-button>
+        <sm-button class="basic red" icon="">Red</sm-button>
+        <sm-button class="basic" icon="save">With icon</sm-button>
+  
+             <sm-button class="circular" icon="edit"></sm-button>
+        <sm-button class="circular basic" icon="add big"></sm-button>
+        <sm-button class="circular basic purple" icon="female big"></sm-button>
+        <sm-button class="circular brown" icon="male big"></sm-button>
+
+        <sm-button class="fluid" icon="">Fluid ( full width ) button</sm-button>
+
+
+ <h4 class="ui header">Avatar horizontal ordered</h4>
+
+
+  <form class="ui form" >
+	<sm-loader  class="inverted" text="Loading..."></sm-loader>
+	<div class="field">
+	    <sm-input label="Name" icon="user" class="left"  placeholder="Enter name..."></sm-input>
+	</div>
+	<div class="field">
+	    <sm-input label="E-mail" icon="mail" class="left" placeholder="Enter e-mail..."></sm-input>
+	</div>
+	<div class="field">
+	    <sm-checkbox label="I agree to the Terms and Conditions"></sm-checkbox>
+	</div>
+	<sm-button  class="primary">Login</sm-button>
+    </form>
+
+    <h4 class="ui header">Feedback</h4>
+<form class="ui form" [formGroup]="formFeedback">
+    <div class="field">
+        <sm-input label="Name" [control]="formFeedback.get('nameControl')" placeholder="Enter name..."></sm-input>
+        Remaining: {{(formFeedback.get('nameControl').value.length - 4 )}}
+    </div>
+    <div class="field">
+        <label>Category</label>
+        <sm-select class="fluid" [control]="formFeedback.get('selectControl')" placeholder="Choose category...">
+            <option>Support</option>
+            <option>Feedback</option>
+        </sm-select>
+    </div>
+    <div class="field">
+        <sm-textarea label="Name" rows="10" [control]="formFeedback.get('textControl')"></sm-textarea>
+        Remaining: {{(formFeedback.get('textControl').value.length - 10)}}
+    </div>
+    <sm-button (click)="feedbackModal.show({ transition: 'slide up'})" [disabled]="!formFeedback.valid" class="primary">Send</sm-button>
+</form>
+<sm-modal title="Feedback sent" #feedbackModal>
+    <modal-content>
+        <h2 class="ui icon center aligned header">
+          <i class="thumbs up icon"></i>
+          <div class="content">
+            <p>Successfully sent</p>
+            <div class="sub header"></div>
+            <div></div>
+            <p>
+            </p>
+          </div>
+        </h2>
+    </modal-content>
+</sm-modal>
+
+<sm-select placeholder="Search..." class="fluid search">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</sm-select>
+
+<sm-card class="ui card" image="http://semantic-ui.com/images/avatar2/large/kristy.png">
+
+</sm-card>
+
+
+<sm-cards>
+        <sm-card class="card" image="http://semantic-ui.com/images/avatar2/large/kristy.png">
+            
+        </sm-card>
+        <sm-card class="card" image="http://semantic-ui.com/images/avatar2/large/kristy.png">
+           
+        </sm-card>
+
+         <sm-card class="card">
+        
+        <sm-button class="bottom attached fluid" icon="add">Add friend</sm-button>
+    </sm-card>
+    </sm-cards>
+
+
+
+   

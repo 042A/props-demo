@@ -1,0 +1,81 @@
+<div class="ui main container">
+
+<div class="ui grid two column">
+<div class="column">
+
+<sm-tabs>
+  <sm-tab title="Products">
+      <input #input placeholder="Search" id="search">
+
+        <div class="ui stackable two cards"  [dragula]='"first-bag"' id='left'>
+          <div *ngFor="let product of products | async" class="card">
+            <div class="content">
+              <img class="right floated mini ui image" src="{{product.image}}">
+              <div class="header">
+               <span class="meta">{{product.brand}}</span> {{product.name}} 
+              </div>
+              <div class="meta">
+                {{product.artnr}}
+              </div>
+              <div class="description">
+                {{product.block}}
+              </div>
+            </div>
+            <div class="extra content">
+              
+              
+            </div>
+          </div>
+        </div>
+
+
+
+  </sm-tab>
+  <sm-tab title="Sales pitch"> 
+</sm-tab>
+  <sm-tab title="Calculations">text..</sm-tab>
+  <sm-tab title="Brands">
+  bnmbn
+
+  </sm-tab>
+</sm-tabs>
+    
+
+
+
+
+
+  </div>
+  <div class="column">
+
+<div class="putmehere" id='right'
+[dragula]='"first-bag"' 
+[dragulaOptions]="optionstarget">
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

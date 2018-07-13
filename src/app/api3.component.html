@@ -1,0 +1,265 @@
+<div class="ui main container">
+
+<sm-tabs>
+  <sm-tab title="Products">
+<div class="ui grid two column">
+<div class="column">
+    <button class="ui button primary" (click)="addProductModal.show()">Add new product</button>
+    </div>
+    <div class="column">
+<sm-search placeholder="Search..." (onSearch)="elementIcon.innerText = $event" [icon]="true" 
+[debounce]="500"></sm-search>
+</div>
+</div>
+
+        <div class="ui stackable four cards">
+          <div *ngFor="let product of products | async" class="card">
+            <div class="content">
+              <img class="right floated mini ui image" src="{{product.image}}">
+              <div class="header">
+               <span class="meta">{{product.brand}}</span> {{product.name}} 
+              </div>
+              <div class="meta">
+                {{product.artnr}}
+              </div>
+              <div class="description">
+                {{product.block}}
+              </div>
+            </div>
+            <div class="extra content">
+              
+              <div class="ui three buttons">
+                  <div class="ui ui inverted green button">
+                  Info</div>
+                   <div class="ui ui inverted orange button">
+                  Edit</div>
+                  <div class="ui ui inverted red button" 
+                  (click)="deleteProduct(product.$key)">
+                  Delete</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+  </sm-tab>
+  <sm-tab title="Sales pitch"> 
+</sm-tab>
+  <sm-tab title="Calculations">text..</sm-tab>
+  <sm-tab title="Brands">
+    <ul>
+    <li *ngFor="let item of items | async">
+    
+
+   
+    <div class="ui input">
+  <input #updatetext1 [value]="item.text" type="text" placeholder="Search...">
+</div>
+  <div class="ui disabled input">
+   <input  type="text" #updatetext2 [value]="item.$key" />
+</div>
+  <button (click)="updateItem(item.$key, updatetext1.value, updatetext2.value)">Update</button>
+  <button  (click)="deleteItem(item.$key)">Delete</button>
+    </li>
+  </ul>
+
+
+
+<button class="ui button primary" (click)="myModalNormal.show({inverted: true})">Add new brand</button>
+  </sm-tab>
+</sm-tabs>
+    
+
+
+
+<sm-modal title="Add new Brand" class="basic" icon="home" #myModalNormal>
+    <modal-content>
+                <div class="ui input">
+  <input #brandname type="text" placeholder="Search...">
+</div>
+<button class="ui button green"  (click)="addItem(brandname.value)">Add</button>
+
+    </modal-content>
+    <modal-actions>
+        <div class="ui buttons">
+            <div class="ui button primary" (click)="myModalNormal.hide()">Close</div>
+        </div>
+    </modal-actions>
+</sm-modal>
+
+
+  </div>
+  <div class="column">
+
+
+
+
+
+<sm-sidebar class="right vertical very wide vertical inverted sidebar labeled  menu" #invertedSidebar>        
+   <a class="item">
+    <i class="home icon"></i>
+    Title
+<div class="ui input fluid">
+<input #productname type="text" placeholder="">
+</div>
+
+  </a>
+  <a class="item">
+    <i class="block layout icon"></i>
+    Brand
+  <sm-select [control]="selectControl" [(model)]="selection" placeholder="Search..." class="search fluid">
+  <option *ngFor="let item of items | async">  {{item.text}}</option>
+</sm-select>
+  </a>
+  <a class="item">
+    <i class="smile icon"></i>
+    Friends
+
+      <form class="ui form" [formGroup]="formFeedback">
+    <div class="field">
+        <sm-input label="Name" [control]="formFeedback.get('nameControl')" placeholder="Enter name..."></sm-input>
+        Remaining: {{(formFeedback.get('nameControl').value.length - 4 )}}
+    </div>
+    <div class="field">
+        <label>Category</label>
+        <sm-select class="fluid" [control]="formFeedback.get('selectControl')" placeholder="Choose category...">
+            <option>Support</option>
+            <option>Feedback</option>
+        </sm-select>
+    </div>
+    <div class="field">
+        <sm-textarea label="Name" rows="10" [control]="formFeedback.get('textControl')"></sm-textarea>
+        Remaining: {{(formFeedback.get('textControl').value.length - 10)}}
+    </div>
+    <sm-button (click)="feedbackModal.show({ transition: 'slide up'})" [disabled]="!formFeedback.valid" class="primary">Send</sm-button>
+</form>
+
+
+  </a>
+
+  
+
+
+</sm-sidebar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<sm-modal title="Add new product" class="basic" #addProductModal>
+    <modal-content>
+
+        <div class="ui main grid two column">
+            <div class="column">
+
+                <div class="ui big form inverted">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Product name</label>
+                            <input #productname placeholder="First Name" type="text">
+                        </div>
+                        <div class="field">
+                            <label>Product ID</label>
+                            <input #productid placeholder="Last Name" type="text">
+                        </div>
+                    </div>
+
+                     <div class="field">
+                        <label>Block description</label>
+                        <textarea #productblock rows="2"></textarea> 
+                    </div>
+
+                <div class="field">
+                    <label>Brand(s)</label>
+                     <sm-select [control]="selectControl" [(model)]="selection" placeholder="Search..." class="search">
+                        <option *ngFor="let item of items | async">  {{item.text}}</option>
+                    </sm-select>
+                </div>
+
+                <div class="two fields">
+                    <div class="field">
+                        <label>Worth monthly</label>
+                        <input #productworthm placeholder="First Name" type="text">
+                    </div>
+                    <div class="field">
+                        <label>Worth single</label>
+                        <input  #productworths placeholder="Last Name" type="text">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Dependencies</label>
+                     <sm-select [control]="selectControl" [(model)]="selection2" placeholder="Search..." class="search">
+                        <option *ngFor="let product of products | async">  {{product.name}}</option>
+                    </sm-select>
+                </div>
+
+                </div>
+
+            </div>
+            <div class="column">
+
+                <div class="ui big form inverted">
+
+                    <div class="field">
+                        <label>Pulldown</label>
+                        <input  #producttitle placeholder="The best product!" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label>Product description</label>
+                        <textarea #productdisc rows="10"></textarea> 
+                    </div>
+
+                    <div class="field">
+                        <label>Product image</label>
+                        <imageupload (notify)="onNotify($event)" ></imageupload>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </modal-content>
+    <modal-actions>
+        <div class="ui buttons">
+            <div class="ui button primary" (click)="addProductModal.hide()">Close</div>
+            <div class="ui button green" 
+            (click)="addProduct(
+            productname.value, 
+            productid.value, 
+            productblock.value,
+            selection,
+            productworthm.value,
+            productworths.value,
+            producttitle.value,
+            productdisc.value,
+            selection2
+            )">
+            Add product</div>
+        </div>
+
+    </modal-actions>
+</sm-modal>
+
+  
+
+
+
+
+
+
+
+
+
+

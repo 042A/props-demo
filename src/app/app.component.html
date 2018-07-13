@@ -1,3 +1,36 @@
-<h1>
-  {{title}}
-</h1>
+<div style="height: 100px; background-color: white; position: fixed; z-index: 100 ">
+<sm-menu title="Angular2" class="ui top fixed pointing menu" style="z-index: 100" logo="/src/app/logo.jpg">
+  <a sm-item  routerLink="/createproposal" routerLinkActive="active">Create proposal</a>
+    <a sm-item  routerLink="/createproduct" routerLinkActive="active">Your products</a>
+    <a sm-item  routerLink="/createseller" routerLinkActive="active">Your salesteam</a>
+    <a sm-item  routerLink="/apibase" routerLinkActive="active">Template parts</a>
+    <a sm-item  routerLink="/apitemplate" routerLinkActive="active">API 2</a>
+
+    <a sm-item  routerLink="/uibase" routerLinkActive="active">UI</a>
+      <a sm-item  routerLink="/shoppingcart" routerLinkActive="active">ShoppingCart</a>
+    
+          <a sm-item  routerLink="/" routerLinkActive="">Help and documentation</a>
+  
+
+    <sm-menu class="menu right secondary">
+        <a sm-item href="#/elements/menu" 
+            image="http://semantic-ui.com/images/avatar/small/stevie.jpg">Elliot Fu</a>
+        <a sm-item icon="sidebar big"(click)="invertedSidebar.show({transition: 'overlay'})"></a>
+    </sm-menu>
+</sm-menu>
+</div>
+
+<div style="margin-top:100px">
+<router-outlet></router-outlet>
+</div>
+<sm-sidebar class="left vertical inverted sidebar labeled icon menu" #invertedSidebar>        
+    <a class="item">
+        <i class="home icon"></i> Home
+    </a>
+    <a class="item">
+        <i class="block layout icon"></i> Topics
+    </a>
+    <a class="item">
+        <i class="smile icon"></i> Friends
+    </a>
+</sm-sidebar>

@@ -1,0 +1,59 @@
+Your products
+
+<h2>CreateNewProduct</h2>
+
+<input  type="text" #newName placeholder="Name" />
+
+<input  type="text" #newPhone placeholder="Ref (hidden)" />
+
+<button>Add function or subsection</button>
+<br>
+
+
+   
+      <textarea #newMail placeholder="Main Text"></textarea>
+   
+
+<imageupload (notify)="onNotify($event)" ></imageupload>
+<p>{{ imageURL }} </p>
+
+<button>Preview</button>
+<button  (click)="addItem(newName.value , newPhone.value, newMail.value )">Add</button>
+<button  (click)="deleteEverything()">Delete All</button>
+
+
+
+
+
+
+
+<ul style="list-style-type: none;    padding: 0;
+">
+    <li *ngFor="let item of items | async">
+  
+
+   <h3>{{item.name}}</h3>  
+  
+<img width="150px" height="150px" [src]="item.image">
+
+
+    <input  type="text" #updatetext1 [value]="item.name" placeholder="Name" />
+    
+      <input  type="text" #updatetext2 [value]="item.phone" placeholder="Phone"/>
+       
+      <input  type="text" #updatetext3 [value]="item.mail" placeholder="Email"/>
+       
+
+
+      <button  (click)="updateItem(item.$key, updatetext1.value, updatetext2.value, updatetext3.value)">Update</button>
+      <button  (click)="deleteItem(item.$key)">Delete</button>
+
+
+    </li>
+
+
+  </ul>
+
+
+
+
